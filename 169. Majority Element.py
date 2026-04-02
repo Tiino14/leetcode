@@ -1,0 +1,12 @@
+# LeetCode 169. Majority Element
+# Difficulty: Easy
+# Topic: Array & Boyer-Moore Voting
+
+class Solution:
+    def majorityElement(self, nums: list[int]) -> int:
+        candidate, count = None, 0
+        for n in nums:
+            if count == 0:
+                candidate = n
+            count += 1 if n == candidate else -1
+        return candidate

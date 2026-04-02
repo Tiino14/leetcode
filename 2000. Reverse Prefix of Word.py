@@ -1,0 +1,10 @@
+# LeetCode 2000. Reverse Prefix of Word
+# Difficulty: Easy
+# Topic: Two Pointers & String
+
+class Solution:
+    def reversePrefix(self, word: str, ch: str) -> str:
+        idx = word.find(ch)
+        if idx == -1:
+            return word
+        return word[:idx+1][::-1] + word[idx+1:]

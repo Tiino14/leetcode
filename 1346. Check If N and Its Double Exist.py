@@ -1,0 +1,12 @@
+# LeetCode 1346. Check If N and Its Double Exist
+# Difficulty: Easy
+# Topic: Binary Search & Hash Set
+
+class Solution:
+    def checkIfExist(self, arr: list[int]) -> bool:
+        seen = set()
+        for num in arr:
+            if num * 2 in seen or (num % 2 == 0 and num // 2 in seen):
+                return True
+            seen.add(num)
+        return False
